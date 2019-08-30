@@ -71,12 +71,10 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		userInfoDTO=userInfoDAO.checkUserInfo(userId, password);
 		//ログイン認証に成功した場合if文の処理に分岐
 		if(userInfoDTO.getCheckLoginFlg()){
-			//会員情報テーブルのログインフラグの値を書き換える
 			userInfoDAO.update(userId, password);
 
 			//カート情報との紐付け処理
 			String tempUserId=session.get("tempUserId").toString();
-			//仮ユーザIDに紐付くカート情報を取得しListに格納
 			List<CartInfoDTO> cartInfoDTOListForTempUser=cartInfoDAO.getCartInfo(tempUserId);
 			//仮ユーザーIDに紐付くカート情報が存在した場合
 			if(cartInfoDTOListForTempUser!=null){

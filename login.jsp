@@ -38,19 +38,19 @@
 
 <s:form id="loginForm">
       <table class="vertical-list-table">
-      <tr>
-      <th scope="row"><s:label value="ユーザーID"/></th>
-            <s:if test="#session.savedUserIdFlag==true">
-                  <td><s:textfield name="userId" class="txt" placeholder="ユーザーID" value='%{#session.userId}'/></td>
-            </s:if>
-            <s:else>
-                  <td><s:textfield name="userId" class="txt" placeholder="ユーザーID" value='%{userId}'/></td>
-            </s:else>
-      </tr>
-      <tr>
-      <th scope="row"><s:label value="パスワード"/></th>
-            <td><s:password name="password" placeholder="パスワード" class="txt"/></td>
-      </tr>
+            <tr>
+                  <th scope="row"><s:label value="ユーザーID"/></th>
+                        <s:if test="#session.savedUserIdFlag==true">
+                              <td><s:textfield name="userId" class="txt" placeholder="ユーザーID" value='%{#session.userId}'/></td>
+                        </s:if>
+                        <s:else>
+                              <td><s:textfield name="userId" class="txt" placeholder="ユーザーID" value='%{userId}'/></td>
+                        </s:else>
+            </tr>
+            <tr>
+                  <th scope="row"><s:label value="パスワード"/></th>
+                        <td><s:password name="password" placeholder="パスワード" class="txt"/></td>
+            </tr>
       </table>
       <div class="box">
             <s:if test="#session.savedUserIdFlag==true">
@@ -59,21 +59,21 @@
             <s:else>
                   <s:checkbox name="savedUserIdFlag"/>
             </s:else>
-       <s:label value="ユーザーID保存"/><br>
-       </div>
-<div class="submit_btn_box">
-       <s:submit value="ログイン" class="submit_btn" onclick="goLoginAction()"/>
-</div>
-<div class="submit_btn_box">
-      <div id="contents-btn-set">
-            <s:submit value="新規ユーザー登録" class="submit_btn" onclick="goCreateUserAction()"/>
+      <s:label value="ユーザーID保存"/><br>
       </div>
-</div>
-<div class="submit_btn_box">
-      <div id="contents-btn-set">
-            <s:submit value="パスワード再設定" class="submit_btn" onclick="goResetPasswordAction()"/>
+      <div class="submit_btn_box">
+             <s:submit value="ログイン" class="submit_btn" onclick="goLoginAction()"/>
       </div>
-</div>
+      <div class="submit_btn_box">
+            <div id="contents-btn-set">
+                  <s:submit value="新規ユーザー登録" class="submit_btn" onclick="goCreateUserAction()"/>
+            </div>
+      </div>
+      <div class="submit_btn_box">
+            <div id="contents-btn-set">
+                  <s:submit value="パスワード再設定" class="submit_btn" onclick="goResetPasswordAction()"/>
+            </div>
+      </div>
 </s:form>
 </div>
 
